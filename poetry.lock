@@ -86,24 +86,6 @@ pycodestyle = ">=2.11.0,<2.12.0"
 pyflakes = ">=3.1.0,<3.2.0"
 
 [[package]]
-name = "flake8-isort"
-version = "6.0.0"
-description = "flake8 plugin that integrates isort ."
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "flake8-isort-6.0.0.tar.gz", hash = "sha256:537f453a660d7e903f602ecfa36136b140de279df58d02eb1b6a0c84e83c528c"},
-    {file = "flake8_isort-6.0.0-py3-none-any.whl", hash = "sha256:aa0cac02a62c7739e370ce6b9c31743edac904bae4b157274511fc8a19c75bbc"},
-]
-
-[package.dependencies]
-flake8 = "*"
-isort = ">=5.0.0,<6"
-
-[package.extras]
-test = ["pytest"]
-
-[[package]]
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
@@ -306,4 +288,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "0d7e7d31d7f4f9859f152e4b5b276cb553ea41ec1279e52a8a2af6ef3d5abcec"
+content-hash = "0ee986d2a800f2bea6c45cf09f697d95fec5361ebbc25b43034c2446672aaae2"

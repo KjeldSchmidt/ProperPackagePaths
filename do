@@ -14,6 +14,7 @@ function task_quality_gates {
 ## formatting: Applies formatting
 function task_formatting {
   poetry run black .
+  poetry run isort .
 }
 
 ## type-check: Runs mypy static type analysis

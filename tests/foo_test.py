@@ -5,11 +5,8 @@ import properpackagepaths
 import properpackagepaths.bar
 import properpackagepaths.submodule.baz
 from properpackagepaths.foo import bar_module_caller, baz_caller, foo
-from properpackagepaths.the_real_stuff import (
-    at,
-    get_module_prefix,
-    module_to_module_spec,
-)
+from properpackagepaths.the_real_stuff import (at, get_module_prefix,
+                                               module_to_module_spec)
 
 attributes_of_interest = ["__name__", "__package__", "__path__", "__file__", "__spec__"]
 

@@ -16,11 +16,12 @@ def get_project_root_dir() -> str:
     frame_stack: list[FrameInfo] = inspect.stack()
 
     # get info about the module that has invoked this function
-    # (index=0 is always this very module, index=1 is fine as long this function is not called by some other
-    # function in this module)
+    # (index=0 is always this very module,index=1 is fine as long this function
+    # is not called by some other function in this module)
     frame_info: FrameInfo = frame_stack[1]
 
-    # if there are multiple calls in the stacktrace of this very module, we have to skip those and take the first
+    # if there are multiple calls in the stacktrace of this very module,
+    # we have to skip those and take the first
     # one which comes from another module
     if frame_info.filename == __file__:
         for frame in frame_stack:
@@ -44,8 +45,8 @@ def get_project_root_dir() -> str:
         caller_module_name: str = Path(caller_path).name
 
         # this piece represents a subpath in the project directory
-        # (eg. if the root folder is "myproject" and this function has ben called from myproject/foo/bar/mymodule.py
-        # this will be "foo/bar")
+        # (eg. if the root folder is "myproject" and this function has been
+        # called from myproject/foo/bar/mymodule.py this will be "foo/bar")
         project_related_folders: str = caller_path.replace(
             os.sep + caller_module_name, ""
         )

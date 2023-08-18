@@ -1,0 +1,14 @@
+[flake8]
+extend-ignore =
+    # Indentation — handled by black
+    E1
+    W1
+    # Whitespace — handled by black
+    E2
+    W2
+    # Blank lines — handled by black
+    E3
+    W3
+    # Line length — handled by black
+    E5
+    W5
