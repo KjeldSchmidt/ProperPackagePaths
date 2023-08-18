@@ -1,11 +1,15 @@
 import inspect
-from properpackagepaths.foo import foo, baz_caller, bar_module_caller
-from properpackagepaths.the_real_stuff import get_module_prefix, module_to_module_spec, at
+from unittest import mock
+
 import properpackagepaths
 import properpackagepaths.bar
 import properpackagepaths.submodule.baz
-
-from unittest import mock
+from properpackagepaths.foo import bar_module_caller, baz_caller, foo
+from properpackagepaths.the_real_stuff import (
+    at,
+    get_module_prefix,
+    module_to_module_spec,
+)
 
 attributes_of_interest = ["__name__", "__package__", "__path__", "__file__", "__spec__"]
 
@@ -49,5 +53,8 @@ def test_use_function_via_module_import():
 def test_use_function_via_qualified_package():
     result = at(properpackagepaths.foo, properpackagepaths.submodule.baz.baz)
     assert result == "properpackagepaths.foo.baz"
-    with mock.patch("properpackagepaths.foo.properpackagepaths.bar.bar", mock.Mock(return_value=True)):
+    with mock.patch(
+        "properpackagepaths.foo.properpackagepaths.bar.bar",
+        mock.Mock(return_value=True),
+    ):
         assert bar_module_caller() is True

@@ -19,6 +19,8 @@ def module_to_module_spec(raw_module) -> ModuleSpec:
         if name == "__spec__":
             return value
 
+    raise Exception("No module was found")
+
 
 def function_to_whatever(function):
     interesting_keys = ["__name__"]

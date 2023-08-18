@@ -1,8 +1,8 @@
 import inspect
-from inspect import FrameInfo
 import os
-from pathlib import Path
 import sys
+from inspect import FrameInfo
+from pathlib import Path
 
 
 def get_project_root_dir() -> str:
@@ -13,7 +13,7 @@ def get_project_root_dir() -> str:
     """
 
     # stack trace history related to the call of this function
-    frame_stack: [FrameInfo] = inspect.stack()
+    frame_stack: list[FrameInfo] = inspect.stack()
 
     # get info about the module that has invoked this function
     # (index=0 is always this very module, index=1 is fine as long this function is not called by some other
@@ -35,7 +35,7 @@ def get_project_root_dir() -> str:
     caller_absolute_path: str = os.path.abspath(caller_path)
 
     # get the top most directory path which contains the invoker module
-    paths: [str] = [p for p in sys.path if p in caller_absolute_path]
+    paths: list[str] = [p for p in sys.path if p in caller_absolute_path]
     paths.sort(key=lambda p: len(p))
     caller_root_path: str = paths[0]
 
