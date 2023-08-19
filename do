@@ -13,13 +13,13 @@ function task_quality_gates {
 
 ## formatting: Applies formatting
 function task_formatting {
-  poetry run black .
   poetry run isort .
+  poetry run black .
 }
 
 ## type-check: Runs mypy static type analysis
 function task_type_check {
-  poetry run mypy .
+  poetry run mypy
 }
 
 ## lint: Runs flake8 linting
