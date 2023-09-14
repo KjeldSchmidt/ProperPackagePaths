@@ -17,6 +17,14 @@ def test_import_function_from_sibling_module() -> None:
         assert sibling_function_import_caller() is True
 
 
+def test_at_is_formatting_independent() -> None:
+    result = at(
+        fake_code_for_tests.mock_target, bar  # Long comment to preserve the line break
+    )
+    with mock.patch(result, mock.Mock(return_value=True)):
+        assert sibling_function_import_caller() is True
+
+
 def test_import_function_from_sibling_submodule() -> None:
     result = at(fake_code_for_tests.mock_target, baz)
     with mock.patch(result, mock.Mock(return_value=True)):

@@ -5,14 +5,14 @@
 ## quality-gates: Quick and easy quality confirmations
 function task_quality_gates {
   set -e
-  task_formatting
+  task_format
   task_type_check
   task_lint
   task_test
 }
 
 ## formatting: Applies formatting
-function task_formatting {
+function task_format {
   poetry run isort .
   poetry run black .
 }
