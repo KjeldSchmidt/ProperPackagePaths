@@ -1,9 +1,9 @@
 import inspect
 from importlib.machinery import ModuleSpec
-from typing import Any, Callable, TypeAlias
+from typing import Any, TypeAlias
 
 Module: TypeAlias = Any
-CallTarget = Callable[[], Any]
+CallTarget = Any
 
 
 def at(target_package: Module, target_function: CallTarget) -> str:
